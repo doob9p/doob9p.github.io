@@ -1,0 +1,220 @@
+---
+layout: post
+title: "Github Pages로 블로그 만들기 (with. jekyll)"
+date: 2022-12-10 01:43:36 +0530
+categories: Github Pages Blog
+---
+
+# 목표
+
+1. Github Pages로 정적페이지 생성
+2. jekyll을 이용해 테마 적용
+
+<br>
+<br>
+
+# ✔️ Github Pages 만들기
+
+<br>
+
+## 1. Github 저장소 생성
+
+Repository name은 [본인 깃헙 이름].github.io로 만들어준다.
+
+블로그로 쓰일 코드의 내용이 노출되도 상관 없다면 Public으로 생성하면 된다.
+
+코드 노출이 꺼리는 사람은 Private으로 설정하면 되나 Github 계정을 Pro(매월 $4 지불)로 업그레이드 해야한다.
+
+<br>
+<br>
+
+## 2. Git 저장소 clone
+
+```bash
+git clone https://github.com/[username]/[username].github.io
+```
+
+[username] 부분을 자신의 Github 이름으로 수정한 뒤 터미널에 입력한다.
+
+<br>
+<br>
+
+## 3. 저장소에 파일 생성
+
+```bash
+cd [username].github.io
+
+echo "Hello World" > index.html
+```
+
+2번에서 clone한 저장소로 들어가 echo 명령어를 이용해 index.html 파일을 생성한다.
+
+<br>
+<br>
+
+## 4. Github에 올리기
+
+```bash
+git add --all
+
+git commit -m "Initial commit"
+
+git push -u origin [main || master]
+```
+
+3번에서 생성한 파일을 메세지와 함께 commit을 해주고 저장소에 올려주자.
+
+origin이 main인지 master인지 모를 경우 `git remote -v` 를 입력해 origin을 확인한다.
+
+<br>
+<br>
+
+## 5. **https://[username].github.io 확인하기**
+
+웹 브라우저에 URL을 입력한뒤 `Hello World`가 잘 보이는지 확인한다.
+
+<br>
+<br>
+<br>
+
+# ✔️ Github Pages에 jekyll 적용하기
+
+<br>
+<br>
+
+## 1. jekyll 설치
+
+```bash
+gem install bundler jekyll
+```
+
+<br>
+<br>
+
+### ⚠️ 설치 중 에러 해결
+
+```bash
+...
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory
+```
+
+- 1번 설치 도중 위와 같은 오류가 발생하였을 때 해결방법
+  <br>
+
+  **1) 설치**
+
+  ```bash
+  brew update
+  brew install rbenv ruby-build
+  ```
+
+  <br>
+
+  **2) 설치확인**
+
+  ```bash
+  rbenv versions
+  ```
+
+  <br>
+
+  **3) rbenv 이용해 Ruby 버전 확인**
+
+  ```bash
+  rbenv install -l
+  ```
+
+  stable 버전인 3.1.3 버전으로 설치를 진행하겠습니다.
+
+  <br>
+
+  **4) 설치**
+
+  ```bash
+  rbenv install 3.1.3
+  ```
+
+  <br>
+
+  **5) 버전 확인 및 설정**
+
+  ```bash
+  rbenv versions
+
+  * system
+    3.1.3
+
+  rbenv global 3.1.3
+  rbenv versions
+
+    system
+  * 3.1.3
+  ```
+
+  <br>
+
+  6**) 현재 사용중인 shell 확인하기**
+
+  ```bash
+  echo $SHELL
+
+  /bin/bash
+  /bin/zsh
+  ```
+
+  <br>
+
+  7**) 사용중인 shell에 따라 설정 파일 수정**
+
+  ```bash
+  # zsh
+  vi ~/.zshrc
+
+  # bash
+  vi ~/.bashrc
+  ```
+
+  ```bash
+  [[ -d ~/.rbenv  ]] && \
+    export PATH=${HOME}/.rbenv/bin:${PATH} && \
+    eval "$(rbenv init -)"
+  ```
+
+  ```bash
+  # zsh
+  source ~/.zshrc
+
+  # bash
+  source ~/.bashrc
+  ```
+
+  <br>
+
+  8**) 1. jekyll 설치로 돌아가 다시 설치한다.**
+
+<br>
+<br>
+
+## 2. jekyll 생성
+
+**1) 프로젝트 루트에 있는 모든 파일을 삭제한다.**
+
+<br>
+
+**2) 생성**
+
+```bash
+# 현재 위치가 프로젝트 root에 위치에 있을 때
+jekyll new ./
+```
+
+<br>
+
+**3) 실행**
+
+```bash
+bundle exec jekyll serve
+```
+
+웹 브라우저에서 [http://localhost:4000](http://localhost:4000)에 접속하여 확인 할 수 있다.
