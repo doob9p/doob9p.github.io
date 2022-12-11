@@ -139,7 +139,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   a {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
   li {
     i {
@@ -164,7 +164,7 @@ main {
 
     a {
       display: block;
-      font-family: 'Merriweather';
+      font-family: "Merriweather";
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
@@ -239,6 +239,12 @@ main {
     margin-top: 0;
   }
 }
+
+.post-box {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
 .post-container {
   padding-left: 30px;
 }
@@ -286,7 +292,8 @@ main {
   transition: width 0.1s;
 }
 table {
-  th, td {
+  th,
+  td {
     padding: 8px 13px;
     border: 1px solid #dfe2e5;
   }
@@ -328,7 +335,7 @@ footer {
     flex-direction: column;
     align-items: center;
     margin: 0 40px;
-    @media screen and (max-width: $smallMobileW){
+    @media screen and (max-width: $smallMobileW) {
       margin: 0 20px;
     }
     border-top: 1px solid #eee;
