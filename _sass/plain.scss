@@ -273,6 +273,17 @@ main {
     font-family: Raleway, sans-serif;
   }
 }
+
+.comment-box {
+  margin-top: 100px;
+
+  & .utterances {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .posts-labelgroup {
   margin: 0 0 0.67em 0;
   display: flex;

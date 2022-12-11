@@ -20,7 +20,19 @@ layout: default
     {%- endif -%}
   </div>
   <div class="post">{{ content }}</div>
-  {%- if site.plainwhite.disqus_shortname -%}
+
+  <div class="comment-box">
+    <script
+      src="https://utteranc.es/client.js"
+      repo="doob9p/doob9p.github.io"
+      issue-term="pathname"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+
+  <!-- {%- if site.plainwhite.disqus_shortname -%}
   <div id="disqus_thread" style="margin-top: 25px"></div>
   <script>
     var disqus_config = function () {
@@ -42,5 +54,5 @@ layout: default
       >comments powered by Disqus.</a
     ></noscript
   >
-  {%- endif -%}
+  {%- endif -%} -->
 </div>
