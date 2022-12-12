@@ -1,0 +1,49 @@
+---
+layout: post
+title: "jekyll에 favicon 적용하기!"
+date: 2022-12-13 12:18:36 +0530
+categories: Github Pages Blog
+---
+
+## 목표
+
+1. jekyll로 만든 Github Pages 블로그에 favicon(파비콘) 이미지를 적용할 수 있다.
+
+<br>
+<br>
+<br>
+
+### 1. 이미지 변환
+
+파비콘으로 쓰일 이미지의 확장자가 ico가 아닌 경우 아래 사이트에서 변환해준다.
+
+https://convertio.co/kr/png-ico/
+
+<br>
+<br>
+
+### 2. `/assets/favicon.ico`
+
+프로젝트 루트 > `assets` 폴더 안에 ico 확장자 이미지들 넣어준다.
+
+<br>
+<br>
+
+### 3. `/_includes/head.html` > 링크 추가
+
+```
+<link rel="icon" type="image/png" href="/assets/favicon.ico">
+```
+
+프로젝트 루트 > `_includes` 폴더 안에 `head.html 파일 내부의 상단에 위 코드를 삽입한다.`
+
+<br>
+<br>
+
+### 4. 실행
+
+```
+bundle exec jekyll serve
+```
+
+올바르게 작동하는지 확인해보자.
