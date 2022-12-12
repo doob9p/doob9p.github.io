@@ -3,6 +3,8 @@ author: Brook Kim
 email: doob9p@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   개발 공부 기록용 블로그입니다.
+webmaster_verifications:
+  google: S2yBXCMA50ff1sAxg7WrPw2JUzHv-Hqz4qt6ofuLlQQ
 show_excerpts: true # set to true to show excerpts on the homepage
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
