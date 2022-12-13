@@ -9,8 +9,8 @@ categories: Github Pages Blog
 
 # 목표
 
-1. Github Pages로 정적페이지 생성
-2. jekyll을 이용해 테마 적용
+- Github Pages로 정적페이지 생성
+- jekyll을 이용해 테마 적용
 
 <br>
 <br>
